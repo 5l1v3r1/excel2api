@@ -6,12 +6,12 @@ How to use ?
 
 To use the Google api sheet you must change the configuration in the `conf/env.yml` folder by adding `api_key` you have.
 
-![alt text][https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-sheet.png]
+![alt text](https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-sheet.png)
 
 
 You can register by entering the link [Google api console](https://console.developers.google.com/apis/credentials)
 
-![alt text][https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-auth.png]
+![alt text](https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-auth.png)
 
 
 Route list:
