@@ -3,6 +3,7 @@
 Excel2api currently only supports Google sheets and Excel via http
 
 How to use ?
+-----------
 
 To use the Google api sheet you must change the configuration in the `conf/env.yml` folder by adding `api_key` you have.
 
@@ -31,7 +32,10 @@ Route list:
 
 ---
 
-### This service may not stable so contributor all welcome
+Contribution
+------------
+We are always happy to have new contributions. 
+We have `marked issues good for anyone looking to get started`, and welcome.
 
 ## Running unit test
 ```shell script
