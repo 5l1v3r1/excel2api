@@ -5,11 +5,13 @@ Excel2api currently only supports Google sheets and Excel via http
 How to use ?
 
 To use the Google api sheet you must change the configuration in the `conf/env.yml` folder by adding `api_key` you have.
-![alt text][/img/google-sheet.png]
+
+![alt text][./img/google-sheet.png]
 
 
 You can register by entering the link [Google api console](https://console.developers.google.com/apis/credentials)
-![alt text][/img/google-auth.png]
+
+![alt text][./img/google-auth.png]
 
 
 Route list:
