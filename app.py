@@ -33,5 +33,3 @@ def startup():
 def shutdown():
     print("[Execute value when shutdown]")
 
-# Running application
-# uvicorn app:app --reload --port 8000

@@ -10,7 +10,7 @@ To use the Google api sheet you must change the configuration in the `conf/env.y
 ![alt text](https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-sheet.png)
 
 
-You can register by entering the link [Google api console](https://console.developers.google.com/apis/credentials)
+And then you need to register api key by entering the link [Google api console](https://console.developers.google.com/apis/credentials)
 
 ![alt text](https://github.com/FerdinaKusumah/excel2api/blob/master/img/google-auth.png)
 
@@ -30,14 +30,27 @@ Route list:
         - `Sheet1!A1:C22` which mean you want to open sheet `Sheet1` with range `A12` to `B22`
         - `Sheet1!A:B` which mean you want to open sheet `Sheet1` with all range `A` to `B`
 
----
+Manual Installation
+------------
+* Need python 3.7+
+* Backed by python [fast api](https://github.com/tiangolo/fastapi)
+* `pip install -r requirements.txt`
+* Run with command `uvicorn app:app --reload --port 8000`
+
+Docker Installation
+------------
+* Need python 3.7+
+* Backed by python [fast api](https://github.com/tiangolo/fastapi)
+* `docker-compose up -d --build`
+
+Running unit test
+------------
+```shell script
+  python -m unittest discover -v -s ./tests
+```
+
 
 Contribution
 ------------
 We are always happy to have new contributions. 
 We have `marked issues good for anyone looking to get started`, and welcome.
-
-## Running unit test
-```shell script
-  python -m unittest discover -v -s ./tests
-```
