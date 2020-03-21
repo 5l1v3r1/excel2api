@@ -4,7 +4,7 @@ from starlette import applications
 from starlette.middleware.cors import CORSMiddleware
 
 # import controller
-from apps.routes import google_router, raw_url_router
+from apps.routes import excel_router, csv_router
 from connection import Connection
 
 app = FastAPI()
@@ -16,8 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # register routes
-app.include_router(google_router)
-app.include_router(raw_url_router)
+app.include_router(excel_router)
+app.include_router(csv_router)
 
 
 @app.on_event("startup")
@@ -32,4 +32,3 @@ def startup():
 @app.on_event("shutdown")
 def shutdown():
     print("[Execute value when shutdown]")
-

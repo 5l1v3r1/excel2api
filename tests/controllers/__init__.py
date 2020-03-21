@@ -1,2 +1,1 @@
-from tests.controllers.google import TestGoogleServiceApi
-from tests.controllers.url import TestUrlServiceApi
+from tests.controllers.excel import TestExcelServiceApi

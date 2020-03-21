@@ -1,2 +1,1 @@
-from apps.services.google import GoogleSheetService as GoogleSheetServiceApi
-from apps.services.url import RawUrlService as RawUrlServiceApi
+from apps.services.excel import Excel as ExcelServiceApi
