@@ -4,7 +4,7 @@ Excel2api currently only supports Google sheets and Excel via http
 
 Documentation
 -----------
-.. Todo
+Please open [https://excel2api.herokuapp.com/docs](https://excel2api.herokuapp.com/docs)
 
 Manual Installation
 ------------
