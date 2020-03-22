@@ -9,7 +9,7 @@ router = APIRouter()
 
 
 @router.get("/v1/api/csv")
-def fetch_all(sheet_url: str, row_range: str = None, column_range: str = None):
+def fetch_csv(sheet_url: str, row_range: str = None, column_range: str = None):
     """Fetch csv data from url
     :param sheet_url: str
         example: https://example/data/full_data.csv

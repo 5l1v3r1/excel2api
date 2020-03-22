@@ -9,7 +9,7 @@ router = APIRouter()
 
 
 @router.get("/v1/api/excel")
-def fetch_all(sheet_name: str, sheet_url: str, row_range: str = None, column_range: str = None):
+def fetch_excel(sheet_name: str, sheet_url: str, row_range: str = None, column_range: str = None):
     """Fetch csv data from url
         :param sheet_name: str
             example: Sheet1
