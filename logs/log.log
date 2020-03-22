@@ -38,3 +38,12 @@
 2020-03-22 13:06:00,774 - uvicorn.error - INFO - Application shutdown complete.
 2020-03-22 13:06:00,775 - uvicorn.error - INFO - Finished server process [95096]
 2020-03-22 13:06:03,177 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 14:05:43,005 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 14:05:54,911 - uvicorn.error - INFO - Shutting down
+2020-03-22 14:05:55,012 - uvicorn.error - INFO - Waiting for connections to close. (CTRL+C to force quit)
+2020-03-22 14:06:04,570 - uvicorn.error - INFO - Finished server process [96417]
+2020-03-22 14:06:28,117 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 14:07:12,735 - uvicorn.error - INFO - Shutting down
+2020-03-22 14:07:12,836 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 14:07:12,837 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 14:07:12,837 - uvicorn.error - INFO - Finished server process [96442]

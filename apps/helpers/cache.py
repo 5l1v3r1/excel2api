@@ -1,5 +1,5 @@
 import hashlib
-import json
+import orjson
 from functools import wraps
 
 import pandas
@@ -20,13 +20,13 @@ def cache(ttl=None):
                 return not applications.conf['cache'].get(q_hash) is None
 
             def _get_cache_values(q_hash):
-                return pandas.read_json(json.loads(applications.conf['cache'].get(q_hash)))
+                return pandas.read_json(orjson.loads(applications.conf['cache'].get(q_hash)))
 
             def _set_cache_and_return_values(q_hash, data, time_to_live):
                 if time_to_live is None:
                     time_to_live = applications.conf['config']['redis'][applications.conf['config']['env']]['min_ttl']
 
-                applications.conf['cache'].set(q_hash, json.dumps(data), ex=time_to_live)
+                applications.conf['cache'].set(q_hash, orjson.dumps(data), ex=time_to_live)
                 return _get_cache_values(query_hash)
 
             if _is_cache_exists(query_hash):

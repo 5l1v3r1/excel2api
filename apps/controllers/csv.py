@@ -1,4 +1,4 @@
-import json
+import orjson
 
 from apps.services import ExcelServiceApi
 
@@ -24,4 +24,4 @@ class CsvController(ExcelServiceApi):
         if column_range is not None:
             df = df[column_range.split(',')]
 
-        return json.loads(df.to_json(orient='records'))
+        return orjson.loads(df.to_json(orient='records'))
