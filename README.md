@@ -1,6 +1,6 @@
-# Convert your excel and csv as data source and convert it as API
+# Convert your excel and csv as API
 
-It can read 
+It can read from csv file and excel file url
 
 Documentation
 -----------

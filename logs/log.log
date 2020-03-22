@@ -1,0 +1,30 @@
+2020-03-22 12:55:00,522 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:55:00,626 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:55:00,628 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:55:00,629 - uvicorn.error - INFO - Finished server process [93821]
+2020-03-22 12:55:03,846 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 12:55:55,151 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:55:55,252 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:55:55,252 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:55:55,253 - uvicorn.error - INFO - Finished server process [94900]
+2020-03-22 12:56:00,429 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 12:57:46,340 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:57:46,445 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:57:46,445 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:57:46,446 - uvicorn.error - INFO - Finished server process [94917]
+2020-03-22 12:57:50,909 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 12:58:18,090 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:58:18,194 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:58:18,195 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:58:18,195 - uvicorn.error - INFO - Finished server process [94957]
+2020-03-22 12:58:19,586 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 12:58:34,678 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:58:34,781 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:58:34,782 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:58:34,783 - uvicorn.error - INFO - Finished server process [94973]
+2020-03-22 12:58:37,428 - uvicorn.error - INFO - Application startup complete.
+2020-03-22 12:58:39,287 - uvicorn.error - INFO - Shutting down
+2020-03-22 12:58:39,388 - uvicorn.error - INFO - Waiting for application shutdown.
+2020-03-22 12:58:39,389 - uvicorn.error - INFO - Application shutdown complete.
+2020-03-22 12:58:39,389 - uvicorn.error - INFO - Finished server process [94988]
+2020-03-22 12:58:40,504 - uvicorn.error - INFO - Application startup complete.
