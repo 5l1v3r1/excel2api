@@ -1,6 +1,6 @@
-# Convert your excel as data source and convert it as API
+# Convert your excel and csv as data source and convert it as API
 
-Excel2api currently only supports Google sheets and Excel via http
+It can read 
 
 Documentation
 -----------
@@ -13,11 +13,13 @@ Manual Installation
 * `pip install -r requirements.txt`
 * Run with command `uvicorn app:app --reload --port 8000`
 
-Docker Installation
+Manual Installation
 ------------
 * Need python 3.7+
+* `pip install -r requirements.txt`
+* change configuration in `conf/.env.yaml`
+* change `env` in `conf/.env.yaml`
 * Backed by python [fast api](https://github.com/tiangolo/fastapi)
-* `docker-compose up -d --build`
 
 Running unit test
 ------------
