@@ -27,6 +27,7 @@ def startup():
     conn = Connection()
     # get config
     applications.conf['config'] = conn.get_config
+    applications.conf['cache'] = conn.cache_conn()
 
 
 @app.on_event("shutdown")

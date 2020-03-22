@@ -1,9 +1,11 @@
 # thread connection
 import logging
 import logging.config
-# core database
-import sqlite3
 from os.path import dirname, join
+
+# core database
+# redis connection
+import redis
 
 # import setting
 from setting import Setting
@@ -18,11 +20,19 @@ class Connection:
         # Get the logger specified in the file
         self.logger = logging.getLogger(__name__)
 
-    def db_conn(self) -> object:
-        """Get postgres sql connection
+    def cache_conn(self) -> object:
+        """Define cache database configuration
         :return: object
         """
-        return sqlite3.connect(join(dirname(__file__), self.__setting.load_config['db']['path']))
+        _config = self.get_config
+        # cache database
+        return redis.StrictRedis(
+            connection_pool=redis.ConnectionPool(
+                host=_config['redis'][_config['env']]['host'],
+                port=_config['redis'][_config['env']]['port'],
+                db=_config['redis'][_config['env']]['db_cache'],
+                password=_config['redis'][_config['env']]['password'])
+        )
 
     @property
     def get_config(self):

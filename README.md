@@ -2,7 +2,7 @@
 
 Excel2api currently only supports Google sheets and Excel via http
 
-How to use ?
+Documentation
 -----------
 .. Todo
 

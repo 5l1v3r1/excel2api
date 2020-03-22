@@ -20,7 +20,7 @@ class ExcelController(ExcelServiceApi):
         if row_range is not None:
             tmp = row_range.split(':')
             s = int(tmp[0]) if len(tmp) > 1 and tmp[0] != '' else None
-            e = int(tmp[1]) if len(tmp) > 1 else int(tmp[0])
+            e = int(tmp[1]) if len(tmp) > 1 and tmp[1] != '' else int(tmp[0])
             df = df.iloc[s:e]
         if column_range is not None:
             df = df[column_range.split(',')]

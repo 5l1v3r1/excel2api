@@ -11,7 +11,7 @@ from setting import Setting
 client = TestClient(app)
 
 
-class TestExcelServiceApi(unittest.TestCase):
+class TestCsvServiceApi(unittest.TestCase):
 
     def setUp(self):
         _setting = Setting()
@@ -23,40 +23,34 @@ class TestExcelServiceApi(unittest.TestCase):
 
     def test_positive(self):
         """Raw test positive test"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_name=Sheet1&sheet_url=https://mdcune.psych.ucla.edu/modules/bioinformatics/extras/QTL_Sample_data.xls/at_download/file&column_range=ID,Point,Strain&row_range=3:5'
+        _url = 'http://localhost:8000/v1/api/csv?sheet_url=https://covid.ourworldindata.org/data/ecdc/full_data.csv&column_range=date,location,new_cases&row_range=1:2'
         response = client.get(_url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['status'], 200)
 
     def test_with_no_column_range(self):
         """Test with no column range"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_name=Sheet1&sheet_url=https://mdcune.psych.ucla.edu/modules/bioinformatics/extras/QTL_Sample_data.xls/at_download/file&row_range=3:5'
+        _url = 'http://localhost:8000/v1/api/csv?sheet_url=https://covid.ourworldindata.org/data/ecdc/full_data.csv&row_range=1:2'
         response = client.get(_url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['status'], 200)
 
     def test_with_no_row_range(self):
         """Test with no row range"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_name=Sheet1&sheet_url=https://mdcune.psych.ucla.edu/modules/bioinformatics/extras/QTL_Sample_data.xls/at_download/file&column_range=ID,Point,Strain'
+        _url = 'http://localhost:8000/v1/api/csv?sheet_url=https://covid.ourworldindata.org/data/ecdc/full_data.csv&column_range=date,location,new_cases'
         response = client.get(_url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['status'], 200)
 
     def test_with_no_row_and_column_range(self):
         """Test with no column and row range"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_name=Sheet1&sheet_url=https://mdcune.psych.ucla.edu/modules/bioinformatics/extras/QTL_Sample_data.xls/at_download/file'
+        _url = 'http://localhost:8000/v1/api/csv?sheet_url=https://covid.ourworldindata.org/data/ecdc/full_data.csv'
         response = client.get(_url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()['status'], 200)
 
     def test_with_no_sheet_url(self):
         """Test with no sheet url"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_name=Sheet1'
-        response = client.get(_url)
-        self.assertEqual(response.status_code, 422)
-
-    def test_with_no_sheet_name(self):
-        """Test with no sheet name"""
-        _url = 'http://localhost:8000/v1/api/excel?sheet_url=https://mdcune.psych.ucla.edu/modules/bioinformatics/extras/QTL_Sample_data.xls/at_download/file'
+        _url = 'http://localhost:8000/v1/api/csv?column_range=date,location,new_cases&row_range=1:2'
         response = client.get(_url)
         self.assertEqual(response.status_code, 422)

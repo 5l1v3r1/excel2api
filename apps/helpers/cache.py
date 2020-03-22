@@ -1,17 +1,39 @@
+import hashlib
+import json
 from functools import wraps
 
-from cachetools import TTLCache
+import pandas
+from starlette import applications
 
-cache_ttl = TTLCache(maxsize=10_000, ttl=360)
 
+def cache(ttl=None):
+    def decorator(func):
+        @wraps(func)
+        def decorated_function(*args, **kwargs):
+            __hash = '{}'.format(func.__name__)
+            if args:
+                __hash = '{}:{}'.format(func.__name__, ':'.join(str(doc) for doc in args[1:]))
 
-def cache_data(f):
-    @wraps(f)
-    def cache(*args, **kwargs):
-        __cache_name = '{}-{}'.format(f.__name__, ",".join([i for i in args]))
-        if cache_ttl.get(__cache_name, None) is None:
-            cache_ttl[__cache_name] = f(*args, **kwargs)
+            query_hash = hashlib.sha1(__hash.encode('utf-8')).hexdigest()
 
-        return cache_ttl[__cache_name]
+            def _is_cache_exists(q_hash):
+                return not applications.conf['cache'].get(q_hash) is None
 
-    return cache
+            def _get_cache_values(q_hash):
+                return pandas.read_json(json.loads(applications.conf['cache'].get(q_hash)))
+
+            def _set_cache_and_return_values(q_hash, data, time_to_live):
+                if time_to_live is None:
+                    time_to_live = applications.conf['config']['redis'][applications.conf['config']['env']]['min_ttl']
+
+                applications.conf['cache'].set(q_hash, json.dumps(data), ex=time_to_live)
+                return _get_cache_values(query_hash)
+
+            if _is_cache_exists(query_hash):
+                return _get_cache_values(query_hash)
+
+            return _set_cache_and_return_values(query_hash, func(*args, **kwargs), ttl)
+
+        return decorated_function
+
+    return decorator

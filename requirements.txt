@@ -5,3 +5,4 @@ mock==4.0.1
 starlette==0.12.9
 fastapi==0.48.0
 requests==2.23.0
+redis==3.4.1
